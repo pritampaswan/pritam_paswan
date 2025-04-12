@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pritam Paswan - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Orbitron&family=Rajdhani&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+      color: white;
+    }
+    header {
+      font-family: 'Pacifico', cursive;
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00ffd5;
+      box-shadow: 0 0 10px cyan;
+    }
+    nav {
+      background: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px;
+      z-index: 999;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00ffd5;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .home {
+      text-align: center;
+      font-size: 2rem;
+      padding-top: 80px;
+    }
+    .typing {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #00ffd5;
+    }
+    .about, .skills, .contact {
+      font-family: 'Rajdhani', sans-serif;
+    }
+    .about h2, .skills h2, .contact h2, .projects h2, .services h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid cyan;
+      display: inline-block;
+    }
+    .skills ul, .services ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .skills li, .services li {
+      background: #222;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #00ffd5;
+    }
+    .socials a {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0 10px;
+      color: white;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+    .socials a:hover {
+      color: #00ffd5;
+    }
+    footer {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    .dark-light {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00ffd5;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>PRITAM PASWAN</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <section class="home" id="home">
+    <p>Hello! I'm <span class="typing" id="typing"></span></p>
+  </section>
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>Name: Pritam Paswan</p>
+    <p>From: Pokharbhinda, Darbhanga</p>
+    <p>Passionate about hacking, editing, development and cyber security. I sell courses at the cheapest price with high value.</p>
+  </section>
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Ethical Hacking</li>
+      <li>Video Editing</li>
+      <li>App Development</li>
+      <li>Web Development</li>
+      <li>Cyber Security</li>
+      <li>Course Marketing</li>
+    </ul>
+  </section>
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <p>PaswanPB Earning App, MS Office Course Platform, Blogger-based Earning Website and more...</p>
+  </section>
+  <section class="services" id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Sell Any Digital Course</li>
+      <li>App/Web Development</li>
+      <li>Cybersecurity Consulting</li>
+      <li>Private Online Coaching</li>
+    </ul>
+  </section>
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: loveyoubabu@gmail.com</p>
+    <p>Phone: 9709611733</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/heartless_boy_pritam" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/p/DFeoK_lhED7" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 PRITAM PB | All rights reserved.
+  </footer>
+
+  <div class="dark-light" onclick="toggleDark()">🌓</div>
+
+  <script>
+    const texts = ["a Hacker", "a Developer", "a Video Editor", "a Mentor"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+      document.getElementById('typing').textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 1000);
+      } else {
+        setTimeout(type, 150);
+      }
+    }
+    type();
+
+    function toggleDark() {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        document.body.style.background = '#000';
+      } else {
+        document.body.style.background = 'linear-gradient(to right, #0f0c29, #302b63, #24243e)';
+      }
+    }
+  </script>
+</body>
+</html>
